@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { login, getTime, updateTime, getAllUsers, getUserByUsername, createUser,encryptPassword} from "../controllers/auth.controller"; 
+import { login, getTime, updateTime, getAllUsers, getUserByUsername, createUser,encryptPassword,} from "../controllers/auth.controller"; 
+import { createOrder } from "../controllers/order.controller";
 
 
 const router = Router();
@@ -11,6 +12,7 @@ router.get('/users', getAllUsers);
 router.get('/user/:username', getUserByUsername);
 router.post('/users',createUser);
 router.put('/encrypt-password', encryptPassword);
+router.post('/create-order', createOrder);
 
 
 

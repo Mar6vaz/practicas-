@@ -133,6 +133,7 @@ export const encryptPassword = async (req: Request, res: Response) => {
         console.log("Error en encryptPassword: ", error);
         return res.status(500).json({ message: "Error al cifrar contraseña", error });
     }
+    
 };
 
 
