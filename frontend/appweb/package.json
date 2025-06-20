@@ -1,38 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "apps-14.0",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@types/jsonwebtoken": "^9.0.9",
-    "bcrypt": "^6.0.0",
-    "bcryptjs": "^3.0.2",
-    "dayjs": "^1.11.13",
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0",
-    "mongoose": "^8.15.1",
-    "morgan": "^1.10.0",
-    "node-cache": "^5.1.2"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/express": "^5.0.2",
-    "@types/morgan": "^1.9.9",
-    "@types/node": "^22.15.19",
-    "jsonwebtoken": "^9.0.2",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.3"
-=======
-  "name": "appweb",
+  "name": "vite-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -47,11 +14,12 @@
     "antd": "^5.26.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^6.30.1",
     "tailwindcss": "^4.1.9"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
+    "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.0",
@@ -61,6 +29,5 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
->>>>>>> d5d8e61 (commit frontedn)
   }
 }

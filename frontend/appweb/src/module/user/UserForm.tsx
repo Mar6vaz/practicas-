@@ -1,70 +1,54 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';//sbasdbqh 
+import { Form, Input, Button } from 'antd';
 
-const UserForm: React.FC = () => (
-  <>
-    {/* Formulario con layout horizontal */}
-    <Form
-      name="horizontal-form"
-      layout="horizontal"
-      labelCol={{ span: 4 }}
-      wrapperCol={{ span: 20 }}
-      onFinish={(values) => console.log('Horizontal Submit:', values)}
-    >
-      <Form.Item
-        label="Nombre"
-        name="nombre"
-        rules={[{ required: true, message: 'Por favor ingresa tu nombre' }]}
+export default function UserForm() {
+  const [form] = Form.useForm();
+
+  const handleSubmit = (values: unknown) => {
+    console.log('Datos del formulario:', values);
+  };
+
+  return (
+    <div style={{ maxWidth: 400, margin: 'auto', padding: '2rem' }}>
+      <h2>Vite + React</h2>
+      <p style={{ color: '#888' }}>Hello world!</p>
+
+      <Form
+        form={form}
+        name="userForm"
+        layout="vertical"
+        onFinish={handleSubmit}
       >
-        <Input />
-      </Form.Item>
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[{ required: true, message: 'Por favor ingresa tu nombre de usuario' }]}
+        >
+          <Input />
+        </Form.Item>
 
-      <Form.Item
-        label="Correo"
-        name="correo"
-        rules={[{ required: true, message: 'Por favor ingresa tu correo' }]}
-      >
-        <Input type="email" />
-      </Form.Item>
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[{ required: true, message: 'Por favor ingresa tu contraseña' }]}
+        >
+          <Input.Password />
+        </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 4, span: 20 }}>
-        <Button type="primary" htmlType="submit">
-          Enviar Horizontal
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[{ required: true, type: 'email', message: 'Correo no válido' }]}
+        >
+          <Input />
+        </Form.Item>
 
-    <br />
-
-    {/* Formulario con layout vertical */}
-    <Form
-      name="vertical-form"
-      layout="vertical"
-      onFinish={(values) => console.log('Vertical Submit:', values)}
-    >
-      <Form.Item
-        label="Usuario"
-        name="usuario"
-        rules={[{ required: true, message: 'Por favor ingresa un usuario' }]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Contraseña"
-        name="contrasena"
-        rules={[{ required: true, message: 'Por favor ingresa una contraseña' }]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Enviar Vertical
-        </Button>
-      </Form.Item>
-    </Form>
-  </>
-);
-
-export default UserForm;
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Enviar
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
+}
